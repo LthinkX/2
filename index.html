@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>聊天室</title>
+  </head>
+  <body>
+    <div id="chat-box"></div>
+    <form onsubmit="return false;">
+      <input type="text" id="input-box" />
+      <button onclick="sendMessage()">发送</button>
+    </form>
+    <script>
+      function sendMessage() {
+        var message = document.getElementById("input-box").value;
+        if (message) {
+          var chatBox = document.getElementById("chat-box");
+          var div = document.createElement("div");
+          div.innerHTML = message;
+          chatBox.appendChild(div);
+          document.getElementById("input-box").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
